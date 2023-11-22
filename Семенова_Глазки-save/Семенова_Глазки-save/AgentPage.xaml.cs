@@ -43,57 +43,63 @@ namespace Семенова_Глазки_save
         {
             var currentAgent = Семенова_ГлазкиEntities.GetContext().Agent.ToList();
 
-            if (TypeCombo.SelectedIndex == 0)
+            if (TypeCombo.SelectedIndex == 1)
             {
-                currentAgent = currentAgent.ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "ЗАО").ToList();
             }
 
-            if (TypeCombo.SelectedIndex==1)
-            {
-                currentAgent=currentAgent.Where(p => (p.AgentTypeString == "МФО")).ToList();
-            }
             if (TypeCombo.SelectedIndex == 2)
             {
-                currentAgent = currentAgent.Where(p => (p.AgentTypeString == "ООО")).ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "МКК").ToList();
             }
+
             if (TypeCombo.SelectedIndex == 3)
             {
-                currentAgent = currentAgent.Where(p => (p.AgentTypeString == "ЗАО")).ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "МФО").ToList();
             }
+
             if (TypeCombo.SelectedIndex == 4)
             {
-                currentAgent = currentAgent.Where(p => (p.AgentTypeString == "МКК")).ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "ОАО").ToList();
             }
+
             if (TypeCombo.SelectedIndex == 5)
             {
-                currentAgent = currentAgent.Where(p => (p.AgentTypeString == "ОАО")).ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "ООО").ToList();
             }
             if (TypeCombo.SelectedIndex == 6)
             {
-                currentAgent = currentAgent.Where(p => (p.AgentTypeString == "ПАО")).ToList();
+                currentAgent = currentAgent.Where(p => p.AgentTypeString == "ПАО").ToList();
             }
-            
 
-            currentAgent = currentAgent.Where(p => p.Title.ToLower().Contains(TBSearch.Text.ToLower()) || p.Phone.Replace("(","").Replace(")", "").Replace(" ", "").Replace("-", "").ToLower().Contains(TBSearch.Text.ToLower()) || p.Email.ToLower().Contains(TBSearch.Text.ToLower())).ToList();
-            
-            if(Sort.SelectedIndex==0)
+
+
+            if (Sort.SelectedIndex == 1)
             {
                 currentAgent = currentAgent.OrderBy(p => p.Title).ToList();
             }
-            if (Sort.SelectedIndex == 1)
+            if (Sort.SelectedIndex == 2)
             {
                 currentAgent = currentAgent.OrderByDescending(p => p.Title).ToList();
             }
-            if (Sort.SelectedIndex == 2)
-            {
-                currentAgent = currentAgent.OrderBy(p => p.Priority).ToList();
-            }
+
             if (Sort.SelectedIndex == 3)
             {
-                currentAgent = currentAgent.OrderByDescending(p => p.Priority).ToList();
+                currentAgent = currentAgent.OrderBy(p => p.Title).ToList();
             }
-            AgentListView.ItemsSource = currentAgent;
+            if (Sort.SelectedIndex == 4)
+            {
+                currentAgent = currentAgent.OrderByDescending(p => p.Title).ToList();
+            }
+
             
+            currentAgent = currentAgent.Where(p => p.Title.ToLower().Contains(TBSearch.Text.ToLower()) ||
+            p.Phone.ToLower().Replace(" ", "").Replace("+", "").Replace("+", "").Replace("7", "").Replace("-", "").Replace("(", "").Replace(")", "").Contains(TBSearch.Text.ToLower().Replace(" ", "").Replace("+", "").Replace("7", "").Replace("-", "").Replace("(", "").Replace(")", "")) ||
+            p.Email.ToLower().Contains(TBSearch.Text.ToLower())).ToList();
+            AgentListView.ItemsSource = currentAgent;
+            TableList = currentAgent;
+            ChangePage(0, 0);
+
         }
 
         private void ChangePage(int direction, int? selectedPage)
@@ -185,7 +191,7 @@ namespace Семенова_Глазки_save
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+            //Manager.MainFrame.Navigate(new AddEditPage());
         }
 
         private void TboxSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -222,6 +228,23 @@ namespace Семенова_Глазки_save
         {
             ChangePage(0, Convert.ToInt32(PageListBox.SelectedItem.ToString())-1);
             
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage(null));
+            UpdateServices();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Agent));
+            UpdateServices();
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            UpdateServices();
         }
     }
 }

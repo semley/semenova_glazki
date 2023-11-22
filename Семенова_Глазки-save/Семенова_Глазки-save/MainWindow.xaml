@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800" FontFamily="Tw Cen MT" Icon="Resources\Глазки-save.ico">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
@@ -17,6 +17,6 @@
         <TextBlock Text="Список агентов" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         
         <Frame Grid.Row="2" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
-        <Button Content="Back" Name="BtnBack" Width="175" Height="30" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
+        <Button Content="Назад" Name="BtnBack" Width="175" Height="30" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
     </Grid>
 </Window>
