@@ -1,0 +1,19 @@
+﻿<Window x:Class="Семенова_Глазки_save.EditPriorityWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Семенова_Глазки_save"
+        mc:Ignorable="d"
+        Title="EditPriorityWindow"  Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Изменить приоритет на" FontSize="24" VerticalAlignment="Center"></TextBlock>
+        <TextBox Height="40" Name="PriorityText" Margin="279,56,175,56"/>
+        <Button Content="Изменить" Height="Auto" Grid.Row="1" HorizontalAlignment="Left" Margin="67,57,0,47" Width="184" Name="EditPriority" Click="EditPriority_Click"></Button>
+        <Button Content="Назад" Height="Auto" Grid.Row="1" HorizontalAlignment="Left" Margin="318,57,0,47" Width="184" Name="BackPriority" Click="BackPriority_Click"></Button>
+    </Grid>
+</Window>

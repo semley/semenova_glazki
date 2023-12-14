@@ -246,5 +246,45 @@ namespace Семенова_Глазки_save
         {
             UpdateServices();
         }
+
+        private void Editprioritet_Click(object sender, RoutedEventArgs e)
+        {
+            int max = 0;
+            foreach (Agent AgentLV in AgentListView.SelectedItems)
+            {
+                if (AgentLV.Priority >= max) max = AgentLV.Priority;
+            }
+            EditPriorityWindow window = new EditPriorityWindow(max);
+            window.ShowDialog();
+            if (string.IsNullOrEmpty(window.PriorityText.Text))
+                return;
+            foreach (Agent AgentLV in AgentListView.SelectedItems)
+                AgentLV.Priority = Convert.ToInt32(window.PriorityText.Text);
+
+            UpdateServices();
+            try
+            {
+                Семенова_ГлазкиEntities.GetContext().SaveChanges();
+                MessageBox.Show("информация сохранена");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            
+        }
+
+        private void AgentListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AgentListView.SelectedItems.Count > 1)
+            {
+                Editprioritet.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Editprioritet.Visibility = Visibility.Hidden;
+            }
+            
+        }
     }
 }

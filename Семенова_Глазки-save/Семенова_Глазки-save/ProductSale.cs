@@ -23,4 +23,7 @@ namespace Семенова_Глазки_save
         public virtual Agent Agent { get; set; }
         public virtual Product Product { get; set; }
     }
+
+    
+
 }

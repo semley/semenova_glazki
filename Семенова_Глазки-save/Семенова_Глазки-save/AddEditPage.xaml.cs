@@ -66,13 +66,14 @@ namespace Семенова_Глазки_save
                 errors.AppendLine("Укажите телефон агента");
             else
             {
-                string ph = currentAgent.Phone.Replace("(", "").Replace("-", "").Replace("+", "");
-                if (((ph[1] == '9' || ph[1] == '4' || ph[1] == '8') && ph.Length != 11)
-                    || (ph[1] == 3 && ph.Length != 12))
+                string ph = currentAgent.Phone.Replace("(", "").Replace("-", "").Replace("+", "").Replace(" ", "");
+                if (((ph[0] == '9' || ph[0] == '4' || ph[0] == '8') && ph.Length != 11)
+                    || (ph[0] == 3 && ph.Length != 12))
                     errors.AppendLine("Укажите правильно номер телефона");
             }
             if (string.IsNullOrWhiteSpace(currentAgent.Email))
                 errors.AppendLine("Укажите почту агента");
+            currentAgent.AgentTypeID = ComboType.SelectedIndex + 1;
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
@@ -124,10 +125,10 @@ namespace Семенова_Глазки_save
         
         }
 
-
-
-
-
+        private void Prodaji_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new ProdajiPage(currentAgent));
+        }
     }
 
 }

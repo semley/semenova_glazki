@@ -47,3 +47,9 @@ C:\Users\Lenovo\Source\Repos\semenova_glazki\Семенова_Глазки-save\
 C:\Users\Lenovo\Source\Repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\Семенова_Глазки-save_Content.g.cs
 C:\Users\Lenovo\Source\Repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\AgentPage.baml
 C:\Users\Lenovo\Source\Repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\Семенова_Глазки-save.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\EditPriorityWindow.g.cs
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\EditPriorityWindow.baml
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\ProdajiPage.g.cs
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\ProdajiPage.baml
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\addPage.g.cs
+C:\Users\Lenovo\source\repos\semenova_glazki\Семенова_Глазки-save\Семенова_Глазки-save\obj\Debug\addPage.baml

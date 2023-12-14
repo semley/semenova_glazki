@@ -68,6 +68,9 @@
     <Compile Include="AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="addPage.xaml.cs">
+      <DependentUpon>addPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -76,6 +79,9 @@
     </Compile>
     <Compile Include="AgentType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EditPriorityWindow.xaml.cs">
+      <DependentUpon>EditPriorityWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Material.cs">
@@ -96,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProdajiPage.xaml.cs">
+      <DependentUpon>ProdajiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SemenovaModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +139,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="addPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPriorityWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,6 +160,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="AgentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProdajiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

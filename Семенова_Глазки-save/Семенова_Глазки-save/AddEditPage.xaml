@@ -51,12 +51,13 @@
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="Тип агента" FontSize="15" Height="20" Width="100" Margin="5"></TextBlock>
             <ComboBox FontSize="15" Height="25" Width="100" Name="ComboType">
-                <TextBlock Text="МФО"/>
-                <TextBlock Text="ООО"/>
-                <TextBlock Text="ЗАО"/>
-                <TextBlock Text="МКК"/>
-                <TextBlock Text="ОАО"/>
-                <TextBlock Text="ПАО"/>
+                
+                <TextBlock Text="МФО"></TextBlock>
+                <TextBlock Text="ООО"></TextBlock>
+                <TextBlock Text="ЗАО"></TextBlock>
+                <TextBlock Text="МКК"></TextBlock>
+                <TextBlock Text="ОАО"></TextBlock>
+                <TextBlock Text="ПАО"></TextBlock>
             </ComboBox>
         </StackPanel>
 
@@ -86,5 +87,6 @@
             <Button Content="Удалить" Name="DeleteBtn" Click="DeleteBtn_Click" Margin="5" Opacity="{Binding ID}"></Button>
         </StackPanel>
         <Button Content="Изменить" Grid.Column="0" Grid.Row="7" Name="ChangePictureBtn" Click="ChangePictureBtn_Click"></Button>
+        <Button Content="История реализации продукции" Grid.Column="1" Grid.Row="7" Name="Prodaji" Click="Prodaji_Click" Width="310"></Button>
     </Grid>
 </Page>
